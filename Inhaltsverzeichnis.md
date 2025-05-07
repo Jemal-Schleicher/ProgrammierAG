@@ -1,0 +1,20 @@
+- Primitive Datentypen
+	- Deklarationen, Initialisierung und Wertzuweisung
+	- Bool Operatoren ( <, ||, && usw.)
+	- Zahlen Operatoren (+, -, *, /, %)
+- Aus- und Eingaben in der Konsole
+- Datentypen Umwandlung
+- if-else Verzweigung
+- switch-Case Verzweigung
+- While Schleife
+-  for Schleife
+- Komplexe Datentypen
+	- String
+	- Array
+	- List
+- Methode
+	- Attribute
+- Klassen
+	- Bekanntheitsgrade (Public, private usw.)
+	- Vererbung
+	- Abstrakt
