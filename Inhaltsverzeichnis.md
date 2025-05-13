@@ -18,4 +18,4 @@
 	- Bekanntheitsgrade (Public, private usw.)
 	- Vererbung
 	- Abstrakt
-[[test]]
+[Verknüpfung](./test)
