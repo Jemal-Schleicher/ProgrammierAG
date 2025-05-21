@@ -1,3 +1,4 @@
+# JAVA BASICS
 ## 1. Datentypen
 
 | Datentyp   | Größe             | Wertebereich                                            | Beschreibung                                                    | Beispielwert      |
