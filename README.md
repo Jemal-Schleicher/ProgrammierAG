@@ -409,12 +409,17 @@ Ein **Array** ist eine Sammlung von **gleichen Datentypen**, die unter einem gem
 
 ### 9.1 Deklaration und Initialisierung eines Arrays
 
-Ein Array muss zunächst deklariert und anschließend mit Werten initialisiert werden. Die Deklaration erfolgt mit dem Datentyp des Arrays und der Anzahl der Elemente, die es speichern soll.
+Ein Array muss zunächst deklariert und kann auch direkt anschließend mit Werten initialisiert werden. Die Deklaration erfolgt mit dem Datentyp des Arrays und der Anzahl der Elemente, die es speichern soll. 
+
+>Ein Array kann seine Größe nicht ändern...
 
 ```java
 int[] zahlen = {1, 2, 3, 4, 5}; 
 ```
 
+``` java
+int[] zahlen = new int[5];
+```
 ### 9.2 Zugriff auf Array-Elemente
 
 Um auf die Elemente eines Arrays zuzugreifen, verwendet man den Index des jeweiligen Elements. Der Index beginnt bei 0 für das erste Element, 1 für das zweite Element usw.
@@ -508,3 +513,54 @@ System.out.println(matrix[2][0]);  // Ausgabe: 7
 ```
 
 ---
+# 10 Exception
+
+Eine **Exception** in Java ist ein Ereignis, das während der Ausführung eines Programms auftritt und den normalen Ablauf des Programms unterbricht. **Exceptions** werden verwendet, um Fehler oder ungewöhnliche Situationen zu behandeln, die während der Programmausführung auftreten können.
+
+### 10.1 Arten von Exceptions
+
+#### 10.1.1 Unchecked:
+**Unchecked Exceptions** sind Ausnahmen/Errors, die während der Laufzeit auftreten und nicht vom Compiler überprüft werden. Das bedeutet, dass der Compiler nicht sicherstellen kann bzw. muss, dass diese Ausnahmen/Errors behandelt werden.
+
+##### Beispiele 
+In diesem Beispiel wird versucht, auf das 6. Element eines Arrays zuzugreifen, das nur 1 Element enthält. Dies führt zu einer `ArrayIndexOutOfBoundsException`, da der Index 5 außerhalb der Grenzen des Arrays liegt.
+
+``` java
+static public void myUncheckedExceptionMethod()  {  
+    int[] array = new int[1];  
+  
+    array[5] = 10;  
+}
+```
+
+#### 10.1.2 Checked:
+**Checked Exceptions** sind Ausnahmen/Errors, die während der Kompilierungszeit erkannt werden. Das bedeutet, dass der Compiler sicherstellen muss, dass diese Ausnahmen/Errors entweder behandelt oder weitergegeben werden. Wenn eine Methode eine **Checked Exception** auslösen kann, muss sie entweder die Ausnahme behandeln oder mit dem Schlüsselwort `throws` deklarieren, dass sie diese Ausnahme weitergeben kann.
+
+##### Beispiele
+Wenn die Bedingung `condition` wahr ist, wird eine neue `Exception` mit der Nachricht "Cool Exception Message" ausgelöst.
+
+Die ausgelöste Ausnahme wird im `catch`-Block abgefangen und kann dort behandelt werden. Der `catch`-Block verhindert, dass die Ausnahme weiter nach außen propagiert wird.
+
+``` java
+static public void myCheckedExceptionMethod(boolean condition) {  
+    try {  
+        if (condition) {  
+            throw new Exception("Cool Exception Message");  
+        }  
+    } catch (Exception e) {  
+        //code  
+    }  
+}
+```
+
+Wenn die Bedingung `condition` wahr ist, wird eine neue `Exception` mit der Nachricht "Cool Exception Message" ausgelöst.
+
+Da die Methode mit `throws Exception` deklariert ist, wird die Ausnahme nicht innerhalb der Methode behandelt, sondern an den Aufrufer der Methode weitergegeben. Der Aufrufer muss dann entweder die Ausnahme selbst behandeln oder sie weitergeben.
+
+``` java
+static public void myCheckedExceptionMethod(boolean condition) throws Exception {  
+    if (condition) {  
+        throw new Exception("Throw Exception");  
+    }  
+}
+```
